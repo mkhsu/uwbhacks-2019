@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div>
         <NavBar />
-        <main style={{marginTop: '64px'}}>
+        <main style={{marginTop: '4vh'}}>
           {/* <p>This is the page content!</p> */}
         </main>
         {/* <Form /> */}

@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Map, TileLayer } from 'react-leaflet';
+import { Map, TileLayer, Marker } from 'react-leaflet';
 import convert from 'color-convert';
 import Zone from './Zone';
+import College from './College';
 import family from './familyincome.json';
+import bachelor from './bachelor.json';
+import tuition from './colleges/collegecosts.json';
+import collegeLocations from './colleges/collegelatlon.json';
 
-console.log(family)
-console.log(family.features[0])
 export default class leaflet extends Component {
-    
+
   constructor(props) {
     super(props);
     //[47.7589,-122.1906] uwb
@@ -19,22 +21,9 @@ export default class leaflet extends Component {
     };
   }
 
-  updatePosition = () => {
-    const marker = this.refmarker.current
-    if (marker != null) {
-      this.setState({
-        marker: marker.leafletElement.getLatLng(),
-      })
-    }
-  }
-
-  toggleDraggable = () => {
-    this.setState({ draggable: !this.state.draggable })
-  }
-
-  convertColor(ratio,saturation,value) {
+  convertColor(hue,saturation,value){
     var range = 120;
-    return convert.hsv.hex(Math.round(ratio*range),saturation,value);
+    return convert.hsv.hex(hue*range,saturation,value);
   }
 
   filterAttributes(attrs) {
@@ -72,11 +61,18 @@ export default class leaflet extends Component {
       />;
     });
   }
-  
+
+  mapColleges() {
+    return Object.entries(collegeLocations).map(([id, loc]) => {
+      return <College key={id} position={[loc.LATITUDE, loc.LONGITUDE]} />;
+    })
+  }
+
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
-      <Map center={position} zoom={this.state.zoom}>
+      <Map center = {position} zoom = {this.state.zoom}>
+      
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'

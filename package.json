@@ -5,6 +5,7 @@
   "dependencies": {
     "color-convert": "^2.0.0",
     "leaflet": "^1.4.0",
+    "node-fetch": "^2.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-leaflet": "^2.2.1",
