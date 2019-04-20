@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, Marker } from 'react-leaflet';
+import { Map, TileLayer } from 'react-leaflet';
 import convert from 'color-convert';
 import Zone from './Zone';
 import College from './College';
 import family from './familyincome.json';
-import bachelor from './bachelor.json';
-import tuition from './colleges/collegecosts.json';
 import collegeLocations from './colleges/collegelatlon.json';
 
 export default class leaflet extends Component {
@@ -14,8 +12,8 @@ export default class leaflet extends Component {
     super(props);
     //[47.7589,-122.1906] uwb
     this.state = {
-      lat: 47.7589,
-      lng: -122.1906,
+      lat: 47.610378,
+      lng: -122.200676,
       zoom: 11,
       draggable: true
     };
@@ -41,7 +39,6 @@ export default class leaflet extends Component {
 
   getMedian(feature) {
     const entries = this.filterAttributes(feature.attributes);
-    //console.log(entries);
     entries.sort(([, a], [, b]) => a - b);
 
     return entries[entries.length-1];
@@ -52,7 +49,7 @@ export default class leaflet extends Component {
       const median = this.getMedian(f);
       const fields = this.filterAttributes(family.fieldAliases);
       const name = family.fieldAliases[median[0]];
-      const color = fields.findIndex(f => f[0] == median[0]) / fields.length;
+      const color = fields.findIndex(f => f[0] === median[0]) / fields.length;
       return <Zone
         key={f.attributes.OBJECTID}
         text={name}
@@ -71,8 +68,7 @@ export default class leaflet extends Component {
   render() {
     const position = [this.state.lat, this.state.lng];
     return (
-      <Map center = {position} zoom = {this.state.zoom}>
-      
+      <Map center={position} zoom={this.state.zoom}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
