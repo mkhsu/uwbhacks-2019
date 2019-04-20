@@ -1,5 +1,5 @@
 # Web Deveopment Hackathon for UWB Hacks the Internet April 19 2019
-
+![alt text](https://github.com/mkhsu/uwbhacks-2019/raw/master/Screen%20Shot%202019-04-19%20at%208.56.09%20PM.png "Income Levels by Zipcode in King County, Washington")
 # Team Members:
 Alex Young - Team documentation and data gatherer  
 Kevin Hsu - Hosted the VS code, found .Json libraries  
