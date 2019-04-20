@@ -1,11 +1,11 @@
 # Web Deveopment Hackathon for UWB Hacks the Internet April 19 2019
 
 # Team Members:
-Alex Young - Team documentation and data gatherer
-Kevin Hsu - Hosted the VS code, found .Json libraries
-Will Nelson - Developed the React and js code base for visualizing the geolocation data
-Jarod Guerrero - made a a Nav bar and learned a lot about js and react code
-Daniel Yan - Developed React and .js code base for visualization and the color coding for income levels
+Alex Young - Team documentation and data gatherer  
+Kevin Hsu - Hosted the VS code, found .Json libraries  
+Will Nelson - Developed the React and js code base for visualizing the geolocation data  
+Jarod Guerrero - made a a Nav bar and learned a lot about js and react code  
+Daniel Yan - Developed React and .js code base for visualization and the color coding for income levels  
 
 # Summary:
 Using .Json Libraries from data.gov and kingcounty api's our team created a website that shows income levels by zipcode.
