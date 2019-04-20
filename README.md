@@ -1,4 +1,4 @@
-# Web Deveopment Hackathon for UWB Hacks the Internet April 19,2019
+# Web Development Hackathon for UWB Hacks the Internet April 19,2019
 ![alt text](https://github.com/mkhsu/uwbhacks-2019/blob/master/Screen%20Shot%202019-04-19%20at%209.46.23%20PM.png "Income Levels by Zipcode in King County, Washington")
 
 # Team
